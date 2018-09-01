@@ -2,7 +2,7 @@
 
 $upload_directory = "uploads";
 
-// helper functions
+/*************** helper functions **********************/
 
 
 function last_id()
@@ -90,9 +90,9 @@ function confirm($result)
 function escape_string($string)
 {
 
-    global $connection;
+    global $conn;
 
-    return mysqli_real_escape_string($connection, $string);
+    return mysqli_real_escape_string($conn, $string);
 
 
 }
@@ -144,12 +144,12 @@ function get_products()
                 <!--Card content-->
                 <div class="card-body text-center">
                     <!--Category & Title-->
-                    <a href="" class="grey-text">
+                    <a href="#" class="grey-text">
                         <h5>{$row['brand']}</h5>
                     </a>
                     <h5>
                         <strong>
-                            <a href="" class="dark-grey-text">{$row['product_name']}
+                            <a href="product-page.php?id={$row['product_id']}" class="dark-grey-text">{$row['product_name']}
                                 <span class="badge badge-pill danger-color d-none">NEW</span>
                             </a>
                         </strong>
@@ -193,7 +193,7 @@ $category_links = <<<DELIMETER
 
         <li class=nav-item'>
 
-                <a class='nav_link ' href='product-page.php'> {$row['cat_name']} </a> 
+                <a class='nav_link font-weight-bold blue-text ' href='category.php?id={$row['cat_id']}'> {$row['cat_name']} </a> 
 
                 </li>
 
@@ -206,6 +206,10 @@ echo $category_links;
 
 }
 
+
+
+
+/*****************************Back End Function*************************/
 
 
 function display_image($picture)

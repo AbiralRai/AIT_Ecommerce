@@ -14,7 +14,9 @@
 
             <!--First slide-->
             <div class="carousel-item active">
-                <div class="view" style="background-image: url('img/macbook_pro_banner.jpg'); background-repeat: no-repeat; background-size: cover;">
+                 <!-- style="background-image: url('img/macbook_pro_banner.jpg'); background-repeat: no-repeat; background-size: cover;" -->
+                <div class="view ">
+                <img class="d-block w-100 h-100 img-fluid" src="../public/img/macbook_pro_banner.jpg" alt="">
 
                     <!-- Mask & flexbox options-->
                     <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -44,7 +46,9 @@
 
             <!--Second slide-->
             <div class="carousel-item">
-                <div class="view" style="background-image: url('img/samsung_banner.jpg'); background-repeat: no-repeat; background-size: cover;">
+                <!-- style="background-image: url('img/samsung_banner.jpg'); background-repeat: no-repeat; background-size: cover; -->
+                <div class="view ">
+                <img class="d-block w-100 h-100  img-fluid" src="../public/img/samsung_banner.jpg" alt="">
 
                     <!-- Mask & flexbox options-->
                     <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -79,7 +83,10 @@
 
             <!--Third slide-->
             <div class="carousel-item">
-                <div class="view" style="background-image: url('img/roc_banner.jpg'); background-repeat: no-repeat; background-size: cover;">
+                <!-- style="background-image: url('img/roc_banner.jpg'); background-repeat: no-repeat; background-size: cover;" -->
+                <div class="view img-fluid">
+
+                <img class="d-block w-100 h-100  img-fluid" src="../public/img/roc_banner.jpg" alt="">
 
                     <!-- Mask & flexbox options-->
                     <div class="mask rgba-black-light d-flex justify-content-center align-items-center">

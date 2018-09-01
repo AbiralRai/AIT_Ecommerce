@@ -1,5 +1,6 @@
 
 
+
     <div style="background-color: #2980B9;">
             <div class="container">
 
@@ -135,3 +136,22 @@
         <div class="footer-copyright text-center py-3">© 2018 Copyright
         </div>
         <!-- Copyright -->
+
+  <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js">
+    </script>
+    <!-- Initializations -->
+    <script type="text/javascript">
+        // Animations initialization
+        new WOW().init();
+    </script>
+</body>
+
+</html>

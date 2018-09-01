@@ -9,7 +9,10 @@
     <div class="collapse navbar-collapse " id="navbarTogglerDemo01">
         <ul class="nav nav-bar flex-column lighten-4 py-4 ">
             <li class=" nav-brand">
-                <h4 class="nav-item cat">Categories</h4>
+                <a class="font-weight-bold blue-text" href="category.php">
+
+                    <h4 class="nav-item cat"><strong>Categories</strong></h4>
+                </a>
             </li>
 
             <?php
