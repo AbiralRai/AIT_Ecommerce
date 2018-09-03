@@ -20,13 +20,13 @@
 $query = query(" SELECT * FROM products WHERE product_id = " . escape_string($_GET['id']) . " ");
 confirm($query);
 
-while ($row = fetch_array($query)):
+while ($row = fetch_array($query)) :
 
 ?>
             <!--Grid column-->
         <div class="col-md-6 mb-4">
             
-            <img style="height:620px" src="../public/img/<?php echo $row['product_image']?>" class="img-fluid" alt="">
+            <img style="height:620px" src="../public/img/<?php echo $row['product_image'] ?>" class="img-fluid" alt="">
         </div>
         <!-- /Grid column-->
 
