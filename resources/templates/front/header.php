@@ -52,15 +52,6 @@
               <span class="sr-only">(current)</span>
             </a>
                     </li>
-                    <!-- Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
-                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Laptop</a>
-                            <a class="dropdown-item" href="#">Monitor</a>
-                            <a class="dropdown-item" href="#">Accessories</a>
-                        </div>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="modal" data-target="#modalContactForm">Contact</a>
                     </li>

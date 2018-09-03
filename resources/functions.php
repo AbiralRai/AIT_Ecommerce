@@ -159,7 +159,7 @@ function get_products()
                         <strong>&#36;{$row['price']}</strong>
                     </h4>
 
-                    <a href="../public/product-page.php?=id={$row['product_id']}">
+                    <a href="product-page.php?id={$row['product_id']}">
                     <button type="button" class="btn myBlueBG cart">Add To Cart </button>
                     
                     </a>
@@ -193,7 +193,7 @@ $category_links = <<<DELIMETER
 
         <li class=nav-item'>
 
-                <a class='nav_link font-weight-bold blue-text ' href='category.php?id={$row['cat_id']}'> {$row['cat_name']} </a> 
+                <a class='nav_link font-weight-bold blue-text ' href='category_item.php?id={$row['cat_id']}'> {$row['cat_name']} </a> 
 
                 </li>
 
@@ -206,7 +206,135 @@ echo $category_links;
 
 }
 
+function get_categories_item() {
+    $query = query(" SELECT * FROM products WHERE cat_id = ". escape_string($_GET['id']) . " ");
+    confirm($query);
 
+    while ($row = fetch_array($query)) {
+
+        $product_image = display_image($row['product_image']);
+        $product = <<<DELIMETER
+
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4">
+
+            <!--Card-->
+            <div class="card">
+
+                <!--Card image-->
+                <div class="view overlay">
+                <a href="product-page.php?id={$row['product_id']}">
+                    <img style="height:120px" src="../public/img/{$row['product_image']}" class="card-img-top" alt="">
+                    <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+                <!--Card image-->
+
+                <!--Card content-->
+                <div class="card-body text-center">
+                    <!--Category & Title-->
+                    <a href="#" class="grey-text">
+                        <h5>{$row['brand']}</h5>
+                    </a>
+                    <h5>
+                        <strong>
+                            <a href="product-page.php?id={$row['product_id']}" class="dark-grey-text">{$row['product_name']}
+                                <span class="badge badge-pill danger-color d-none">NEW</span>
+                            </a>
+                        </strong>
+                    </h5>
+
+                    <h4 class="font-weight-bold blue-text">
+                        <strong>&#36;{$row['price']}</strong>
+                    </h4>
+
+                    <a href="../public/product-page.php?=id={$row['product_id']}">
+                    <button type="button" class="btn myBlueBG cart">Add To Cart </button>
+                    
+                    </a>
+                </div>
+                <!--Card content-->
+
+            </div>
+            <!--Card-->
+
+        </div>
+        <!--Grid column-->
+
+DELIMETER;
+
+        echo $product;
+
+
+    }
+
+}
+
+function get_search() {
+    $query = query("SELECT * FROM products WHERE product_name LIKE '%" . escape_string($_GET['search']) . "%' ");
+    confirm($query);
+
+    while ($row = fetch_array($query)) {
+        
+        $product_image = display_image($row['product_image']);
+        $search = <<<DELIMETER
+        
+        
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4">
+        
+        <!--Card-->
+        <div class="card">
+        
+        <!--Card image-->
+        <div class="view overlay">
+        <a href="product-page.php?id={$row['product_id']}">
+        <img style="height:120px" src="../public/img/{$row['product_image']}" class="card-img-top" alt="">
+        <div class="mask rgba-white-slight"></div>
+        </a>
+        </div>
+        <!--Card image-->
+        
+        <!--Card content-->
+        <div class="card-body text-center">
+        <!--Category & Title-->
+        <a href="#" class="grey-text">
+        <h5>{$row['brand']}</h5>
+        </a>
+        <h5>
+        <strong>
+        <a href="product-page.php?id={$row['product_id']}" class="dark-grey-text">{$row['product_name']}
+        <span class="badge badge-pill danger-color d-none">NEW</span>
+        </a>
+        </strong>
+        </h5>
+        
+        <h4 class="font-weight-bold blue-text">
+        <strong>&#36;{$row['price']}</strong>
+        </h4>
+        
+        <a href="../public/product-page.php?=id={$row['product_id']}">
+        <button type="button" class="btn myBlueBG cart">Add To Cart </button>
+        
+        </a>
+        </div>
+        <!--Card content-->
+        
+        </div>
+        <!--Card-->
+        
+        </div>
+        <!--Grid column-->
+        
+DELIMETER;
+
+        echo $search;
+
+        
+    }
+
+}
 
 
 /*****************************Back End Function*************************/
