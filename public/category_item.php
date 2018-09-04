@@ -80,7 +80,6 @@
 <hr>
 
 <!-- Search Links -->
-<?php echo $_GET['name']?>
 <?php include(TEMPLATE_FRONT . DS . "search.php") ?>
 <!-- Search Links END!!! -->
 
