@@ -17,7 +17,7 @@ defined("DB_USER") ? null : define("DB_USER", "root");
 
 defined("DB_PASS") ? null : define("DB_PASS", "");
 
-defined("DB_NAE") ? null : define("DB_NAME", "binaryworld");
+defined("DB_NAE") ? null : define("DB_NAME", "binaryWorldDB");
 
 
 $conn = mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);

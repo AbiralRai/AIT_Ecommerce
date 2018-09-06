@@ -56,10 +56,10 @@
                 <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
                     <!-- Content -->
-                    <h6 class="text-uppercase font-weight-bold">Company name</h6>
+                    <h6 class="text-uppercase font-weight-bold">Binary World</h6>
                     <hr class="myBlueBG accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                    <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet, consectetur
-                        adipisicing elit.</p>
+                    <p>This is a project work for Advance Web. It is a demontration of an E-commerce website implementing Html, 
+                      Css, MDBootstrap, JavaScript , JQuery, and php</p>
 
                 </div>
                 <!-- Grid column -->
@@ -70,18 +70,9 @@
                     <!-- Links -->
                     <h6 class="text-uppercase font-weight-bold">Products</h6>
                     <hr class="myBlueBG accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                    <p>
-                        <a href="#!">MDBootstrap</a>
-                    </p>
-                    <p>
-                        <a href="#!">MDWordPress</a>
-                    </p>
-                    <p>
-                        <a href="#!">BrandFlow</a>
-                    </p>
-                    <p>
-                        <a href="#!">Bootstrap Angular</a>
-                    </p>
+                   <?php
+                    get_footer_category();
+                  ?>
 
                 </div>
                 <!-- Grid column -->
@@ -115,9 +106,9 @@
                     <h6 class="text-uppercase font-weight-bold">Contact</h6>
                     <hr class="myBlueBG accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p>
-                        <i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>
+                        <i class="fa fa-home mr-3"></i> Level 13, 120 Spencer Street</p>
                     <p>
-                        <i class="fa fa-envelope mr-3"></i> info@example.com</p>
+                        <i class="fa fa-envelope mr-3"></i> binaryworldait@example.com</p>
                     <p>
                         <i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
                     <p>
@@ -152,6 +143,15 @@
         // Animations initialization
         new WOW().init();
     </script>
+<script>
+  $(document).ready(function() {
+    $('.scrollLink').click( function() {
+     $('html, body').animate({
+          scrollTop: $('#section').offset().top
+     }, 400);
+});
+  });
+</script>
 </body>
 
 </html>
