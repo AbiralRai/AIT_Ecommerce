@@ -438,7 +438,7 @@
 
 
     <!--Section: Main info-->
-    <section class="mt-5 wow fadeIn">
+    <section id="section"  class="mt-5 wow fadeIn">
 
         <!-- Main Grid row-->
     <div class="row wow fadeIn">
