@@ -1,4 +1,4 @@
-<?php require_once("../resources/config.php"); ?>
+<?php require_once("../resources/config.php");?>
 <?php include(TEMPLATE_FRONT . DS . "header.php") ?>
 
 <style>
@@ -29,6 +29,19 @@
           <i class="fas fa-key" style="font-size: 30px; margin-right: 5px; color: #404040"></i>
           <input style="padding: 5px" type="password" placeholder="Password" name="signin_password" size="28" required>
         </div>
+        <?php 
+            if (isset($_SESSION["AlreadyExistedMessage"]))
+              {
+          ?>
+          <div class="container wrong_user">
+            <?php 
+                  echo '<p>'.$_SESSION["AlreadyExistedMessage"].'<p>';
+                  unset($_SESSION["AlreadyExistedMessage"]);
+            ?>
+          </div>
+          <?php 
+              }
+          ?>
         <button id="signin_button" type="submit" value="Sign In">Sign Up</button>
       </form>
       <p id="link-signin-with-signup"><strong>Already have account? Please <a id="signup_link" href="/public/signin.php">Sign In</a> here!</strong></p>
