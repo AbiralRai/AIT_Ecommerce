@@ -52,7 +52,7 @@ function display_message()
 function redirect($location)
 {
 
-    return header("Location: $location ");
+    return header("Location:$location");
 
 
 }
@@ -110,10 +110,7 @@ function fetch_array($result)
 
 /****************************FRONT END FUNCTIONS************************/
 
-
 // get products 
-
-
 function get_products()
 {
 
@@ -160,7 +157,7 @@ function get_products()
                     </h4>
 
                     <a href="product-page.php?id={$row['product_id']}">
-                    <button type="button" class="btn myBlueBG cart">Add To Cart </button>
+                    <button type="button" class="btn myBlueBG cart">Learn More </button>
                     
                     </a>
                 </div>
@@ -181,6 +178,29 @@ DELIMETER;
 
 
 }
+
+//footer products
+function get_footer_category() {
+  
+  $query = query("SELECT * FROM categories");
+  confirm($query);
+  
+  while ($row = fetch_array($query)) {
+    $footer_category = <<<DELIMETER
+    
+      <p>
+          <a href='category_item.php?id={$row['cat_id']}'> {$row['cat_name']} </a> 
+
+      </p>
+
+    
+DELIMETER;
+    
+    echo $footer_category;
+  }
+  
+}
+
 
 function get_categories() {
 
@@ -249,8 +269,8 @@ function get_categories_item() {
                         <strong>&#36;{$row['price']}</strong>
                     </h4>
 
-                    <a href="../public/product-page.php?=id={$row['product_id']}">
-                    <button type="button" class="btn myBlueBG cart">Add To Cart </button>
+                    <a href="product-page.php?id={$row['product_id']}">
+                    <button type="button" class="btn myBlueBG cart">Learn More </button>
                     
                     </a>
                 </div>
@@ -314,8 +334,8 @@ function get_search() {
         <strong>&#36;{$row['price']}</strong>
         </h4>
         
-        <a href="../public/product-page.php?=id={$row['product_id']}">
-        <button type="button" class="btn myBlueBG cart">Add To Cart </button>
+        <a href="product-page.php?id={$row['product_id']}">
+        <button type="button" class="btn myBlueBG ">Learn More </button>
         
         </a>
         </div>
@@ -348,6 +368,5 @@ function display_image($picture)
     return $upload_directory . DS . $picture;
 
 }
-
 
 ?>
