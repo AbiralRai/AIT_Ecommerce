@@ -8,23 +8,30 @@ if(!$conn) {
  $Password = password_hash($_POST['signin_password'], PASSWORD_DEFAULT);
   
 }
-//  Insert data into DB
-  $query = "INSERT INTO usertbl (username, password, email) VALUES
-  ('".$username."', '".$Password."', '".$Email."')";
-  echo $query;
-  $result = mysqli_query($conn, $query);
- 
-    
-  //checks if the execution was successful
-  if(!$result) {
-    echo "<p> Something is wrong with " .$query. "</p>";
-  } else {
-//     echo "<p> Successfully added new record</p>";
-    header("Location:/public/signin.php");
-  }
+  $CheckExistingUser_Query = "SELECT * FROM usertbl WHERE email = '$Email'";
+  $query = "INSERT INTO usertbl (username, password, email) VALUES ('".$username."', '".$Password."', '".$Email."')";
+  $CheckExistingUser = mysqli_query($conn, $CheckExistingUser_Query);
+  if (mysqli_num_rows($CheckExistingUser) > 0)
+  {
+    session_start();
+    $_SESSION["AlreadyExistedMessage"] = "Email already used. Please choose another email !!!";    
+    header("Location:signup.php");
+  } else { 
+    $query1 = "SELECT * FROM usertbl WHERE email = '$Email'";   
+    $result = mysqli_query($conn,$query);
 
-//if successful query operation
-//close the database connection
+    $result1 = mysqli_query($conn,$query1);
+    $row = mysqli_fetch_assoc($result1);
+
+    if ($row){
+      session_start();
+      $_SESSION["email"] = $row["email"];
+      $_SESSION["fullname"] = $row["username"];
+      header("Location:/public/index.php");
+    } else {
+      echo "Some error has occured!";
+    }
+  }
 mysqli_close($conn);
 
 ?>

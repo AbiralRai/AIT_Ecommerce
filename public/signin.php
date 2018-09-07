@@ -34,6 +34,8 @@
 			<?php
 						echo $_SESSION["email_err"].'</br>';
 						echo $_SESSION["password_err"];
+                        unset($_SESSION["email_err"]);
+                        unset($_SESSION["password_err"]);
 			?>
 					</div>
 			<?php
