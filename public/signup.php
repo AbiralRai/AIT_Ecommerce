@@ -6,7 +6,7 @@
     background-color: rgba(41, 128, 185, .7);
   }
 </style>
-<div class="container-main mt-3 pt-1 mb-5 ">
+<div class="container-main mt-4 pt-2 mb-5 ">
   <div class="container-main">
 
     <div class="logo_container_signin mt-5">
