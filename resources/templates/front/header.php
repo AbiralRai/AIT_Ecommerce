@@ -102,7 +102,7 @@
           //echo '<li><a id="index_signin_button" href="../public/signin.php">Sign In</a></li>'; }
      echo '<li class="nav-item">';
     ?>
-       <a class="nav-link waves-effect">
+       <a class="nav-link waves-effect" href="/public/shopping_cart.php">
                              <span class="badge red z-depth-1 mr-1 d-none "> </span>
                              <i class="fa fa-shopping-cart"></i>
                              <span class="clearfix d-none d-sm-inline-block"> Cart </span>

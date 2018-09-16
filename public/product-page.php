@@ -48,10 +48,10 @@ while ($row = fetch_array($query)) :
                 
                 <p class="card-text lead"><?php echo $row['product_description'] ?></p>
                 
-                <form class="d-flex justify-content-left">
+                <form class="d-flex justify-content-left" action="/public/shopping_cart.php?action=add&id=<?php echo $_GET['id']; ?>" method="post">
                     <!-- Default input -->
-                    <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
-                    <button class="btn btn-primary btn-md my-0 disabled cart" type="submit">Add to cart
+                    <input type="number" value="1" size aria-label="Search" class="form-control" name="quantity" style="width: 100px">
+                    <button class="btn btn-primary btn-md my-0 " type="submit">Add to cart
                         <i class="fa fa-shopping-cart ml-1"></i>
                     </button>
                     
